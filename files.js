@@ -51,5 +51,6 @@ function onInitFS(fs) {
   };
   
   // Handle the download complete event.
-  document.addEventListener("DownloadComplete", listFiles);
+  document.addEventListener("SaveComplete", listFiles);
+  document.addEventListener("DOMContentLoaded", listFiles);
 })();
