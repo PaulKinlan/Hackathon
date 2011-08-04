@@ -5,13 +5,11 @@
     "icons" : {
         "128" : "img/icon128.png"
         },
-    "default_locale" : "en",
     "app" : {
         "launch" : {
             "local_path":"index.html"
         }
-    }
-    "permissions" : {
-        "http://*"
-        }
+    },    
+    "permissions" : [
+       "http://*/*", "unlimitedStorage" ]
 }
