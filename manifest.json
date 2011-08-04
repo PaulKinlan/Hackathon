@@ -1,0 +1,17 @@
+{
+    "name" : "Hackathon Podcast Downloader",
+    "version" : "1.0",
+    "description" : "Podcast Downloader",
+    "icons" : {
+        "128" : "img/icon128.png"
+        },
+    "default_locale" : "en",
+    "app" : {
+        "launch" : {
+            "local_path":"index.html"
+        }
+    }
+    "permissions" : {
+        "http://*"
+        }
+}

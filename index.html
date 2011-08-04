@@ -6,15 +6,18 @@
         <script type="text/javascript" src="download.js"></script>
     </head>
     <body>
-        <h1>Podcast download and player</h1>
-        <div id="user_feedback"></div>
-        <div id="download_list"></div>
-        <div id="downloaded_files_list"></div>
-        <input id="file_uri" type="url" size="80" onkeypress="pressUriKey();"
-          value="http://media.ajaxian.com/openwebpodcast/podcasts/openwebpodcast-20080807.mp3"/>
-        <audio id="hackathon_audio"></audio>
-        <div id="control_panel">
-            <button id="button_play">Play</button>
-        </div>
+        <section id="wrapper">
+            <h1>Podcast download and player</h1>
+            <div id="user_feedback"></div>
+            <input id="file_uri" type="url" />
+            <input id="file_uri" type="url" size="80" onkeypress="pressUriKey();"
+                value="http://media.ajaxian.com/openwebpodcast/podcasts/openwebpodcast-20080807.mp3"/>
+            <audio id="hackathon_audio"></audio>
+            <div id="control_panel">
+                <button id="button_play">Play</button>
+            </div>
+            <div id="download_list" class="tracklist"></div>
+            <div id="downloaded_files_list" class="tracklist"></div>
+        </section>
     </body>
 </html>
