@@ -1,6 +1,3 @@
-(function() {
-  var listFiles = function(e) {
-      
 function toArray(list) {
   return Array.prototype.slice.call(list || [], 0);
 }
@@ -19,9 +16,9 @@ function listResults(entries) {
   });
 
   document.querySelector('#filelist').appendChild(fragment);
-}      
-     
-function onInitFS(fs) {
+}
+
+function onInitFs(fs) {
 
   var dirReader = fs.root.createReader();
   var entries = [];
@@ -35,21 +32,11 @@ function onInitFS(fs) {
         entries = entries.concat(toArray(results));
         readEntries();
       }
-    }, fsError);
+    }, errorHandler);
   };
 
   readEntries(); // Start reading dirs.
 
 }
-     function fsError(){
-         alert('eror');
-         }
-     // Get access to the filesystem.
-     window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-     var fs = window.requestFileSystem(window.PERSISTENT, 50*1024*1024 /*50MB*/, 
-       onInitFS, fsError);
-  };
-  
-  // Handle the download complete event.
-  document.addEventListener("DownloadComplete", listFiles);
-})();
+
+window.requestFileSystem(window.PERSISTENT, 1024*1024, onInitFs, errorHandler);
