@@ -7,7 +7,6 @@
         <script type="text/javascript" src="download.js"></script>
         <script type="text/javascript" src="dragdrop.js"></script>
         <script type="text/javascript" src="saver.js"></script>
-        <script type="text/javascript" src="files.js"></script>
     </head>
     <body>
         <section id="wrapper">
@@ -15,20 +14,17 @@
             <div id="user_feedback"></div>
             <form onSubmit="return false;">
                 <label>Enter URL</label><br />
-                <input id="file_uri" type="url" size="80" onkeypress="pressUriKey();"
-                    value="http://google-developer-podcast.googlecode.com/files/googlecodereview-2008july09.mp3"/>
+                <input id="file_uri" size="80" onkeypress="pressUriKey();"
+                    value="audio/googlecodereview-2008july09.mp3"/>
             </form>
             <audio id="hackathon_audio"></audio>
-
             <div id="download_list_wrap" class="tracklist_wrap">
                 <p>Files being downloaded</p>
                 <div id="download_list" class="tracklist"></div>
             </div>
             <div id="downloaded_files_list_wrap" class="tracklist_wrap">
                 <p>Files already downloaded</p>
-                <div id="downloaded_files_list" class="tracklist">
-                    <ul id="filelist"></ul>
-                </div>
+                <div id="downloaded_files_list" class="tracklist"></div>
             </div>
             <div class="clear"></div>
             <div id="control_panel">

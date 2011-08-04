@@ -1,4 +1,20 @@
 (function() {
+  var showFile = function(e) {
+    var url = window.btoa(e.detail);
+    // Document fragments can improve performance since they're only appended
+    // to the DOM once. Only one browser reflow occurs.
+    var fragment = document.createDocumentFragment();
+    var img = '<img src="file-icon.gif">';
+    var li = document.createElement('li');
+    li.innerHTML = [img, '<span>', url, '</span>'].join('');
+    fragment.appendChild(li);
+    document.querySelector('#download_list').appendChild(fragment);
+  };
+  
+  var onProgress = function(e) {
+    alert("Download " + e.detail + "% complete");
+  };
+  
   var saveFile = function(e) {
      var blob = e.detail.blob;
      var url = window.btoa(e.detail.url);
@@ -34,6 +50,8 @@
        onInitFS, fsError);
   };
   
+  document.addEventListener("DownloadStarted", showFile);
+  document.addEventListener("DownloadProgress", onProgress);
   // Handle the download complete event.
   document.addEventListener("DownloadComplete", saveFile);
 })();
