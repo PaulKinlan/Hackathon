@@ -16,10 +16,17 @@ function listResults(entries) {
   // Document fragments can improve performance since they're only appended
   // to the DOM once. Only one browser reflow occurs.
   var fragment = document.createDocumentFragment();
+  var list = document.querySelector('#filelist');
+  list.innerHTML = "";
 
   entries.forEach(function(entry, i) {
     var img = entry.isDirectory ? '<img src="folder-icon.gif">' :
                                   '<img src="file-icon.gif">';
+    // Remove from loading list
+    var oldli = document.getElementById(entry.name);
+    if (oldli != null) {
+      document.querySelector("#loadinglist").removeChild(oldli);
+    }
     var li = document.createElement('li');
     li.innerHTML = [img, '<span>', window.atob(entry.name), '</span>'].join('');
     li.addEventListener("click", (function(fileentry) {
