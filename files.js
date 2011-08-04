@@ -5,7 +5,7 @@ function toArray(list) {
   return Array.prototype.slice.call(list || [], 0);
 }
 
-function playAudio() {
+function playAudio(file) {
     
 }
 
@@ -19,7 +19,7 @@ function listResults(entries) {
                                   '<img src="file-icon.gif">';
     var li = document.createElement('li');
     li.innerHTML = [img, '<span>', window.atob(entry.name), '</span>'].join('');
-    li.addEventListener("click", playAudio);
+    li.addEventListener("click", (function(fileentry) { playAudio(fileentry); })(entry));
     fragment.appendChild(li);
   });
 
