@@ -21,7 +21,7 @@ function download(url) {
     } else if (xhr.readyState == 4) {
       var bb = new window.BlobBuilder();
       bb.append(this.response);
-      var pcast = new Podcast(bb.getBlob("application/octet-stream"), url);
+      var pcast = new Podcast(bb.getBlob("audio/mpeg"), url);
       // fire event sending off the blob
       var completeEvent = document.createEvent('CustomEvent');
       completeEvent.initCustomEvent('DownloadComplete', true, true, pcast);

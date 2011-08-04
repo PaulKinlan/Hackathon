@@ -8,8 +8,15 @@ function toArray(list) {
 function playAudio(file) {
     var audio_id = document.getElementById('hackathon_audio');
     var audio_source = file.toURL();
-    audio_id.src = audio_source;
-    
+
+    var reader = new FileReader();
+
+    reader.onloadend = function(e) {
+      audio_id.src = e.result;
+      audio_id.play();    
+    };
+
+    reader.readAsDataURL(file);
 }
 
 function listResults(entries) {
