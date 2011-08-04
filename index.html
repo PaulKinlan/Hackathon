@@ -14,8 +14,8 @@
             <div id="user_feedback"></div>
             <form onSubmit="return false;">
                 <label>Enter URL</label><br />
-                <input id="file_uri" type="url" size="80" onkeypress="pressUriKey();"
-                    value="http://google-developer-podcast.googlecode.com/files/googlecodereview-2008july09.mp3"/>
+                <input id="file_uri" type="url" size="80" onkeypress="pressUriKey();" value="http://google-developer-podcast.googlecode.com/files/googlecodereview-2008july09.mp3"/>
+                <button id="button_download">Download</button>
             </form>
             <audio id="hackathon_audio"></audio>
             <div id="control_panel">
@@ -25,9 +25,6 @@
                 <button id="button_previous">Previous</button>
             </div>
             <div id="download_list" class="tracklist"></div>
-            <div id="download_container">
-                <button id="button_download" disabled="disabled">Download</button>
-            </div>
             <div id="downloaded_files_list" class="tracklist"></div>
             <div class="clear"></div>
         </section>
