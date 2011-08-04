@@ -6,6 +6,9 @@ function toArray(list) {
 }
 
 function playAudio(file) {
+    var audio_id = document.getElementById('hackathon_audio');
+    var audio_source = file.toURL();
+    audio_id.src = audio_source;
     
 }
 
@@ -19,7 +22,11 @@ function listResults(entries) {
                                   '<img src="file-icon.gif">';
     var li = document.createElement('li');
     li.innerHTML = [img, '<span>', window.atob(entry.name), '</span>'].join('');
-    li.addEventListener("click", (function(fileentry) { playAudio(fileentry); })(entry));
+    li.addEventListener("click", (function(fileentry) {
+        return function(){
+            playAudio(fileentry);
+        };
+    })(entry));
     fragment.appendChild(li);
   });
 
