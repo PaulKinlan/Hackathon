@@ -1,5 +1,6 @@
 (function() {
   var listFiles = function(e) {
+      
 function toArray(list) {
   return Array.prototype.slice.call(list || [], 0);
 }
