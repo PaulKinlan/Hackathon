@@ -26,3 +26,9 @@ function download(url) {
   };
   xhr.send();
 }
+
+function pressUriKey(keyEvent) {
+  if (keyEvent.keyCode == 13) {
+    download(document.fileUri.value);
+  }
+}

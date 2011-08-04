@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <title>Hackathon project</title>
-        <link rel="stylesheet" href="css/styles.css" />
+        <link type="text/css" rel="stylesheet" href="css/styles.css" />
+        <script type="text/javascript" src="download.js"></script>
     </head>
     <body>
         <section id="wrapper">
@@ -12,10 +13,11 @@
             <form>
                 <label>Enter URL</label><br />
                 <input id="file_uri" type="url" />
+                <input id="file_uri" type="url" size="80" onkeypress="pressUriKey();" value="http://media.ajaxian.com/openwebpodcast/podcasts/openwebpodcast-20080807.mp3"/>
             </form>
             <audio id="hackathon_audio"></audio>
             <div id="control_panel">
-                <button id="button_play" />
+                <button id="button_play">Play</button>
             </div>
             <div id="download_list" class="tracklist"></div>
             <div id="downloaded_files_list" class="tracklist"></div>
