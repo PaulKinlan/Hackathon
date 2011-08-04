@@ -42,5 +42,6 @@
     var fs = window.requestFileSystem(window.PERSISTENT, 50 * 1024 * 1024 /*50MB*/ , onInitFS, fsError);
   };
   // Handle the download complete event.
-  document.addEventListener("DownloadComplete", listFiles);
+  document.addEventListener("SaveComplete", listFiles);
+  document.addEventListener("DOMContentLoaded", listFiles);
 })();
