@@ -8,7 +8,6 @@ function Podcast(blob, url) {
 }
 
 function download(url) {
-  // code lifted from StackOverflow 
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.responseType = 'blob';
@@ -27,8 +26,10 @@ function download(url) {
   xhr.send();
 }
 
-function pressUriKey(keyEvent) {
-  if (keyEvent.keyCode == 13) {
-    download(document.fileUri.value);
+function pressUriKey() {
+  if (window.event.keyCode == 13) {
+    download(document.getElementById("file_uri").value);
+    window.event.preventDefault();
+    return false;
   }
 }
