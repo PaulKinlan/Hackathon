@@ -1,1 +1,25 @@
-@charset = "utf-8"
+body {
+    background-color: #002233;
+    font-family: Tahoma;
+}
+h1 {
+    color: #002233;
+}
+.clear {
+    clear: both;
+}
+#wrapper {
+    width: 860px;
+    margin: auto;
+    padding: 5px 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 2px 5px #a6a6a6;
+}
+.tracklist {
+    width: 350px;
+    min-height: 200px;
+    margin: 20px 0;
+    border: 2px solid #002233;
+    float: left;
+}
