@@ -5,6 +5,9 @@ body {
 h1 {
     color: #002233;
 }
+p {
+    margin: 5px 0;
+}
 .clear {
     clear: both;
 }
@@ -16,15 +19,17 @@ h1 {
     border-radius: 10px;
     box-shadow: 2px 5px #a6a6a6;
 }
-.tracklist {
+.tracklist_wrap {
     width: 416px;
-    min-height: 150px;
     margin: 20px 0;
+}
+.tracklist {
+    min-height: 150px;
     border: 2px solid #002233;
 }
-#download_list {
+#download_list_wrap {
     float: left;
 }
-#downloaded_files_list {
+#downloaded_files_list_wrap {
     float: right;
 }
