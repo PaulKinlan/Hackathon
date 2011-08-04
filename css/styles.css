@@ -53,3 +53,6 @@ li img {
 #downloaded_files_list_wrap {
     float: right;
 }
+progress {
+  width: 32.5em;
+}

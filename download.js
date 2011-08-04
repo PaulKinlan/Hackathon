@@ -41,10 +41,16 @@ function download(url) {
   xhr.send();
 }
 
+function startDownload() {
+  download(document.getElementById("file_uri").value);
+}
+
 function pressUriKey() {
   if (window.event.keyCode == 13) {
-    download(document.getElementById("file_uri").value);
+    startDownload();
     window.event.preventDefault();
     return false;
+  } else {
+    document.getElementById("pbar").value = "0";
   }
 }
