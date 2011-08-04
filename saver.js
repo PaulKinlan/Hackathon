@@ -12,7 +12,7 @@
   };
   
   var onProgress = function(e) {
-    alert("Download " + e.detail + "% complete");
+    //alert("Download " + e.detail + "% complete");
   };
   
   var saveFile = function(e) {
