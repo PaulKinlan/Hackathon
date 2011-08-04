@@ -8,6 +8,24 @@ h1 {
 p {
     margin: 5px 0;
 }
+ul {
+	margin: 0;
+	padding: 0;
+}
+li {
+	padding: 0 10px;
+	list-style-type: none;
+	font-size: 13px;
+	line-height: 20px;
+	overflow: hidden;
+}
+li.active {
+	background-color: #002233;
+	color: #f0f0f0;
+}
+li img {
+	display: none;
+}
 .clear {
     clear: both;
 }
@@ -27,6 +45,7 @@ p {
     min-height: 160px;
 	background: url("/img/list.png");
     border: 2px solid #002233;
+	overflow: hidden;
 }
 #download_list_wrap {
     float: left;
