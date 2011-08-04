@@ -8,7 +8,7 @@
     var li = document.createElement('li');
     li.innerHTML = [img, '<span>', url, '</span>'].join('');
     fragment.appendChild(li);
-    document.querySelector('#download_list').appendChild(fragment);
+    document.querySelector('#loadinglist').appendChild(fragment);
   };
   
   var onProgress = function(e) {
