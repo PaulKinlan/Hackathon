@@ -31,7 +31,7 @@ function download(url) {
     }
   };
   xhr.onprogress = function(progressEvent) {
-    var percentDone;
+    var percentDone = "unknown";
     if (progressEvent.lengthComputable) {
        percentDone = 100.0 * progressEvent.loaded.toPrecision(1) /
           progressEvent.total.toPrecision(1);
