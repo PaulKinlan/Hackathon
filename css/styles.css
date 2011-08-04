@@ -24,7 +24,8 @@ p {
     margin: 20px 0;
 }
 .tracklist {
-    min-height: 150px;
+    min-height: 160px;
+	background: url("/img/list.png");
     border: 2px solid #002233;
 }
 #download_list_wrap {

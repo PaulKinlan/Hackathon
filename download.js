@@ -18,7 +18,6 @@ function download(url) {
       var startedEvent = window.createEvent('CustomEvent');
       startedEvent.initCustomEvent('DownloadStarted', true, true, url);
       document.dispatchEvent(startedEvent);
-      //alert("Started");
     } else if (xhr.readyState == 4) {
       var bb = new window.BlobBuilder();
       bb.append(this.response);
@@ -27,7 +26,6 @@ function download(url) {
       var completeEvent = document.createEvent('CustomEvent');
       completeEvent.initCustomEvent('DownloadComplete', true, true, pcast);
       document.dispatchEvent(completeEvent);
-      //alert("Completed");      
     }
   };
   xhr.onprogress = function(progressEvent) {
@@ -39,7 +37,6 @@ function download(url) {
     var loadingEvent = document.createEvent('CustomEvent');
     loadingEvent.initCustomEvent('DownloadProgress', true, true, percentDone);
     document.dispatchEvent(loadingEvent);
-    //alert(percentDone);
   };
   xhr.send();
 }
