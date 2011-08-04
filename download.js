@@ -38,7 +38,7 @@ function download(url) {
     }
     var loadingEvent = document.createEvent('CustomEvent');
     loadingEvent.initCustomEvent('DownloadProgress', true, true, percentDone);
-    document.dispatchEvent(progressEvent);
+    document.dispatchEvent(loadingEvent);
     //alert(percentDone);
   };
   xhr.send();
