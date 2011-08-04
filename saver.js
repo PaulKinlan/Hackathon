@@ -5,14 +5,19 @@
   
   var saveFile = function(e) {
      var blob = e.detail.blob;
-     var url = e.detail.url;
-     var errorHandler = function (errorEvent) {
+     var url = window.btoa(e.detail.url);
+     
+     var fsError = function (errorEvent) {
        alert("save error");
+     };
+     
+     var getFileError = function (errorEvent) {
+       alert("getFile error");
      };
      
      var onInitFS = function(eFs) {
         eFs.root.getFile(url, 
-           {create: true, exclusive: true}, function(fileEntry) {
+           {create: true, exclusive: false}, function(fileEntry) {
            fileEntry.createWriter(function(writer) {
                 writer.onwriteend = function() {
                    // Tell the world we are done.
@@ -21,16 +26,16 @@
                    document.dispatchEvent(savedEvent);
                 };
                 
-               fileWriter.write(blob);
+               writer.write(blob);
            });
 
-        }, errorHandler);
+        }, getFileError);
      };
      
      // Get access to the filesystem.
      window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
      var fs = window.requestFileSystem(window.PERSISTENT, 50*1024*1024 /*50MB*/, 
-       onInitFS, errorHandler);
+       onInitFS, fsError);
   };
   
   download.addEventListener("DownloadStarted", onStarted);
