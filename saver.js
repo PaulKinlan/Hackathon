@@ -1,6 +1,6 @@
 (function() {
   var onStarted = function(e) {
-    alert(e.detail);
+    alert("Download of " + e.detail + " started");
   };
   
   var saveFile = function(e) {
