@@ -4,7 +4,6 @@
         <meta charset="utf-8" />
         <title>Hackathon project</title>
         <link rel="stylesheet" href="css/styles.css" />
-        <script src="saver.js"></script>
         <script type="text/javascript" src="download.js"></script>
         <script type="text/javascript" src="dragdrop.js"></script>
         <script type="text/javascript" src="saver.js"></script>
@@ -24,14 +23,20 @@
 >>>>>>> 67a8a6cfd59e7ef768462b411db3cb87da3569f3
             </form>
             <audio id="hackathon_audio"></audio>
-            <div id="download_list" class="tracklist"></div>
-            <div id="downloaded_files_list" class="tracklist"></div>
+            <div id="download_list_wrap" class="tracklist_wrap">
+                <p>Files being downloaded</p>
+                <div id="download_list" class="tracklist"></div>
+            </div>
+            <div id="downloaded_files_list_wrap" class="tracklist_wrap">
+                <p>Files already downloaded</p>
+                <div id="downloaded_files_list" class="tracklist"></div>
+            </div>
             <div class="clear"></div>
             <div id="control_panel">
                 <button id="button_play">Play</button>
                 <button id="button_pause">Pause</button>
-                <button id="button_next">Next</button>
                 <button id="button_previous">Previous</button>
+                <button id="button_next">Next</button>
             </div>
         </section>
     </body>
