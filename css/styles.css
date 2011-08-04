@@ -11,21 +11,20 @@ h1 {
 #wrapper {
     width: 860px;
     margin: 20px auto;
-    padding: 5px 20px;
+    padding: 5px 20px 20px;
     background-color: #f0f0f0;
     border-radius: 10px;
     box-shadow: 2px 5px #a6a6a6;
 }
 .tracklist {
-    width: 370px;
-    min-height: 200px;
+    width: 416px;
+    min-height: 150px;
     margin: 20px 0;
     border: 2px solid #002233;
+}
+#download_list {
     float: left;
 }
-#download_container {
-    width: 110px;
-    margin-top: 20px;
-    float: left;
-    text-align: center;
+#downloaded_files_list {
+    float: right;
 }

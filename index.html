@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/styles.css" />
         <script src="saver.js"></script>
         <script type="text/javascript" src="download.js"></script>
+        <script type="text/javascript" src="dragdrop.js"></script>
         <script type="text/javascript" src="saver.js"></script>
     </head>
     <body>
@@ -14,22 +15,24 @@
             <div id="user_feedback"></div>
             <form onSubmit="return false;">
                 <label>Enter URL</label><br />
+<<<<<<< HEAD
                 <input id="file_uri" size="80" onkeypress="pressUriKey();"
                     value="audio/googlecodereview-2008july09.mp3"/>
+=======
+                <input id="file_uri" type="url" size="80" onkeypress="pressUriKey();" value="http://google-developer-podcast.googlecode.com/files/googlecodereview-2008july09.mp3"/>
+                <button id="button_download">Download</button>
+>>>>>>> 67a8a6cfd59e7ef768462b411db3cb87da3569f3
             </form>
             <audio id="hackathon_audio"></audio>
+            <div id="download_list" class="tracklist"></div>
+            <div id="downloaded_files_list" class="tracklist"></div>
+            <div class="clear"></div>
             <div id="control_panel">
                 <button id="button_play">Play</button>
                 <button id="button_pause">Pause</button>
                 <button id="button_next">Next</button>
                 <button id="button_previous">Previous</button>
             </div>
-            <div id="download_list" class="tracklist"></div>
-            <div id="download_container">
-                <button id="button_download" disabled="disabled">Download</button>
-            </div>
-            <div id="downloaded_files_list" class="tracklist"></div>
-            <div class="clear"></div>
         </section>
     </body>
 </html>
