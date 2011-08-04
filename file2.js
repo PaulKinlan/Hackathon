@@ -36,7 +36,6 @@ function onInitFs(fs) {
   };
 
   readEntries(); // Start reading dirs.
-
 }
 
 window.requestFileSystem(window.PERSISTENT, 1024*1024, onInitFs, errorHandler);
