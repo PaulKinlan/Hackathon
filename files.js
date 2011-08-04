@@ -6,6 +6,9 @@ function toArray(list) {
 }
 
 function playAudio(file) {
+    var audio_id = document.getElementById('hackathon_audio');
+    var audio_source = file.toURL();
+    audio_id.src = audio_source;
     
 }
 
@@ -13,6 +16,8 @@ function listResults(entries) {
   // Document fragments can improve performance since they're only appended
   // to the DOM once. Only one browser reflow occurs.
   var fragment = document.createDocumentFragment();
+  var list = document.querySelector('#filelist');
+  list.innerHTML = "";
 
   entries.forEach(function(entry, i) {
     var img = entry.isDirectory ? '<img src="folder-icon.gif">' :
@@ -24,7 +29,11 @@ function listResults(entries) {
     }
     var li = document.createElement('li');
     li.innerHTML = [img, '<span>', window.atob(entry.name), '</span>'].join('');
-    li.addEventListener("click", (function(fileentry) { playAudio(fileentry); })(entry));
+    li.addEventListener("click", (function(fileentry) {
+        return function(){
+            playAudio(fileentry);
+        };
+    })(entry));
     fragment.appendChild(li);
   });
 
