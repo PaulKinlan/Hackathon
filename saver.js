@@ -13,7 +13,7 @@
   };
   
   var onProgress = function(e) {
-    //alert("Download " + e.detail + "% complete");
+    document.getElementById("pbar").value = e.detail;
   };
   
   var saveFile = function(e) {

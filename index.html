@@ -18,8 +18,13 @@
                 <label>Enter URL</label><br />
                 <input id="file_uri" type="url" size="80" onkeypress="pressUriKey();"
                     value="http://google-developer-podcast.googlecode.com/files/googlecodereview-2008july09.mp3"/>
+                <button id="download" onclick="startDownload();">Download</button>
             </form>
-            
+
+            <br />
+            <label>Progress</label><br />
+            <progress id="pbar" value="" max="100"></progress>
+           
 
             <div id="download_list_wrap" class="tracklist_wrap">
                 <p>Files being downloaded</p>
