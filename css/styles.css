@@ -8,6 +8,19 @@ h1 {
 p {
     margin: 5px 0;
 }
+ul {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style-type: none;
+	font-size: 13px;
+	line-height: 20px;
+	overflow: hidden;
+}
+li img {
+	display: none;
+}
 .clear {
     clear: both;
 }
@@ -25,8 +38,10 @@ p {
 }
 .tracklist {
     min-height: 160px;
+	padding: 0 10px;
 	background: url("/img/list.png");
     border: 2px solid #002233;
+	overflow: hidden;
 }
 #download_list_wrap {
     float: left;
