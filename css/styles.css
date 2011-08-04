@@ -5,6 +5,9 @@ body {
 h1 {
     color: #002233;
 }
+.clear {
+    clear: both;
+}
 #wrapper {
     width: 860px;
     margin: auto;
@@ -15,3 +18,7 @@ h1 {
 }
 .tracklist {
     width: 350px;
+    min-height: 200px;
+    border: 3px solid #002233;
+    float: left;
+}
