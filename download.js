@@ -13,14 +13,22 @@ function download(url) {
   xhr.responseType = 'blob';
   xhr.setRequestHeader('Content-Type', 'application/octet-stream');
   xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4 && xhr.status == 200) {
+   if (xhr.readyState >=3 && xhr.status != 200) {
+     alert("Bad file: http code " + xhr.status);
+   } else if (xhr.readyState == 3) {
+      // Receiving
+      var startedEvent = document.createEvent('CustomEvent');
+      startedEvent.initEvent('DownloadStarted', true, true, url);
+      window.dispatchEvent(startedEvent);
+   } else if (xhr.readyState == 4 && xhr.status == 200) {
+      // Complete
       var bb = new window.BlobBuilder();
       bb.append(this.response);
       var pcast = new Podcast(bb.getBlob("application/octet-stream"), url);
       // fire event sending off the blob
-      var event = document.createEvent('CustomEvent');
-      event.initEvent('DownloadComplete', true, true, pcast);
-      window.dispatchEvent(event);
+      var completeEvent = document.createEvent('CustomEvent');
+      completeEvent.initEvent('DownloadComplete', true, true, pcast);
+      window.dispatchEvent(completeEvent);
     }
   };
   xhr.send();

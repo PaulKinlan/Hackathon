@@ -1,4 +1,8 @@
 (function() {
+  var onStarted = function(e) {
+    alert(e.detail);
+  };
+  
   var saveFile = function(e) {
      var blob = e.detail.blob;
      var url = e.detail.url;
@@ -29,6 +33,7 @@
        onInitFS, errorHandler);
   };
   
+  download.addEventListener("DownloadStarted", onStarted);
   // Handle the download complete event.
   document.addEventListener("DownloadComplete", saveFile);
 })();
