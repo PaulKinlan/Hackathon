@@ -11,4 +11,7 @@
             "local_path":"index.html"
         }
     }
+    "permissions" : {
+        "http://*"
+        }
 }
