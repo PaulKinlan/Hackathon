@@ -3,6 +3,10 @@
     alert("Download of " + e.detail + " started");
   };
   
+  var onProgress = function(e) {
+    alert("Download " + e.detail + "% complete");
+  };
+  
   var saveFile = function(e) {
      var blob = e.detail.blob;
      var url = window.btoa(e.detail.url);
@@ -38,7 +42,8 @@
        onInitFS, fsError);
   };
   
-  download.addEventListener("DownloadStarted", onStarted);
+  document.addEventListener("DownloadStarted", onStarted);
+  document.addEventListener("DownloadProgress", onProgress);
   // Handle the download complete event.
   document.addEventListener("DownloadComplete", saveFile);
 })();
