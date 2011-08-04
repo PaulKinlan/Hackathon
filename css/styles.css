@@ -19,6 +19,7 @@ h1 {
 .tracklist {
     width: 350px;
     min-height: 200px;
-    border: 3px solid #002233;
+    margin: 20px 0;
+    border: 2px solid #002233;
     float: left;
 }
