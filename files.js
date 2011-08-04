@@ -13,6 +13,8 @@ function listResults(entries) {
   // Document fragments can improve performance since they're only appended
   // to the DOM once. Only one browser reflow occurs.
   var fragment = document.createDocumentFragment();
+  var list = document.querySelector('#filelist');
+  list.innerHTML = "";
 
   entries.forEach(function(entry, i) {
     var img = entry.isDirectory ? '<img src="folder-icon.gif">' :
