@@ -4,6 +4,6 @@
     var bb = new WebKitBlobBuilder();
     bb.append("test");
     downloadEvent.initCustomEvent("DownloadComplete", false, true, 
-     { blob: bb.getBlob("audio/mp3"), url: "http://test.com"});
+     { blob: bb.getBlob("application/octet-stream"), url: "http://test.com"});
     document.dispatchEvent(downloadEvent);
 })();
