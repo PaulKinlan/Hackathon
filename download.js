@@ -12,10 +12,10 @@ function download(url) {
   xhr.responseType = 'blob';
   xhr.setRequestHeader('Content-Type', 'application/octet-stream');
   xhr.onreadystatechange = function() {
-    if (xhr.readyState >= this.HEADERS_RECEIVED && xhr.status != 200) {
+    if (xhr.readyState >= 2 && xhr.status != 200) {
       alert("Bad file: http code " + xhr.status);
-    } else if (xhr.status == this.HEADERS_RECEIVED) {
-      var startedEvent = window.createEvent('CustomEvent');
+    } else if (xhr.readyState == 2) {
+      var startedEvent = document.createEvent('CustomEvent');
       startedEvent.initCustomEvent('DownloadStarted', true, true, url);
       document.dispatchEvent(startedEvent);
     } else if (xhr.readyState == 4) {

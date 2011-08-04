@@ -19,6 +19,11 @@ function listResults(entries) {
   entries.forEach(function(entry, i) {
     var img = entry.isDirectory ? '<img src="folder-icon.gif">' :
                                   '<img src="file-icon.gif">';
+    // Remove from loading list
+    var oldli = document.getElementById(entry.name);
+    if (oldli != null) {
+      document.querySelector("#loadinglist").removeChild(oldli);
+    }
     var li = document.createElement('li');
     li.innerHTML = [img, '<span>', window.atob(entry.name), '</span>'].join('');
     li.addEventListener("click", (function(fileentry) { playAudio(fileentry); })(entry));

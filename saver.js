@@ -1,18 +1,19 @@
 (function() {
   var showFile = function(e) {
-    var url = window.btoa(e.detail);
+    var url = e.detail;
     // Document fragments can improve performance since they're only appended
     // to the DOM once. Only one browser reflow occurs.
     var fragment = document.createDocumentFragment();
     var img = '<img src="file-icon.gif">';
     var li = document.createElement('li');
+    li.id = window.btoa(url);
     li.innerHTML = [img, '<span>', url, '</span>'].join('');
     fragment.appendChild(li);
     document.querySelector('#loadinglist').appendChild(fragment);
   };
   
   var onProgress = function(e) {
-    alert("Download " + e.detail + "% complete");
+    //alert("Download " + e.detail + "% complete");
   };
   
   var saveFile = function(e) {
