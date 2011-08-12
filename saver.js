@@ -32,7 +32,7 @@
         eFs.root.getFile(url, 
            {create: true, exclusive: false}, function(fileEntry) {
            fileEntry.createWriter(function(writer) {
-                writer.onwriteend = function() {
+                writer.onwriteend = function(e) {
                    // Tell the world we are done.
                    var savedEvent = document.createEvent("CustomEvent");
                    savedEvent.initCustomEvent("SaveComplete", false, true, url);

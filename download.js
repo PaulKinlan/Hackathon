@@ -9,8 +9,7 @@ function Podcast(blob, url) {
 function download(url) {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
-  xhr.responseType = 'blob';
-  xhr.setRequestHeader('Content-Type', 'application/octet-stream');
+  xhr.responseType = 'arraybuffer';
   xhr.onreadystatechange = function() {
     if (xhr.readyState >= 2 && xhr.status != 200) {
       alert("Bad file: http code " + xhr.status);
